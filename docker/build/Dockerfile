@@ -14,3 +14,4 @@ ADD supervisord-z-create-mysql-user.conf /etc/supervisor/conf.d/supervisord-z-cr
 
 CMD ["/run.sh"]
 
+
