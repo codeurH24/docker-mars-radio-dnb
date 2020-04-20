@@ -1,9 +1,9 @@
-docker build docker/build -t restaurant
+docker build docker/build -t marsradio
 
 RUN FOR LINUX
-sudo docker run --rm -i -t -p 8080:80 -p 8000:5000 --name backend -v ${PWD}/volume:/app -v ${PWD}/db/mysql:/var/lib/mysql restaurant
+sudo docker run --rm -i -t -p 8080:80 -p 8000:5000 --name backend -v ${PWD}/volume:/app -v ${PWD}/db/mysql:/var/lib/mysql marsradio
 RUN FOR WINDOWS
-sudo docker run --rm -i -t -p 8080:80 -p 8000:5000 --name backend -v %CD%/volume:/app -v %CD%/db/mysql:/var/lib/mysql restaurant
+docker run --rm -i -t -p 8080:80 -p 8000:5000 --name backend -v %CD%/volume:/app -v %CD%/db/mysql:/var/lib/mysql marsradio
 
 sudo docker exec -it backend bash
 
