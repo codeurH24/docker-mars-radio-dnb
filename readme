@@ -1,20 +1,22 @@
-docker build docker/build -t marsradio
+sudo docker build docker/build -t yourProjet
 
 RUN FOR LINUX
-sudo docker run --rm -i -t -p 8080:80 -p 8000:5000 --name backend -v ${PWD}/volume:/app -v ${PWD}/db/mysql:/var/lib/mysql marsradio
+sudo docker run --rm -i -t -p 8080:80 -p 8000:5000 --name backend -v ${PWD}/volume:/app -v ${PWD}/db/mysql:/var/lib/mysql yourProjet
 RUN FOR WINDOWS
-docker run --rm -i -t -p 8080:80 -p 8000:5000 --name backend -v %CD%/volume:/app -v %CD%/db/mysql:/var/lib/mysql marsradio
+docker run --rm -i -t -p 8080:80 -p 8000:5000 --name backend -v %CD%/volume:/app -v %CD%/db/mysql:/var/lib/mysql yourProjet
 
 sudo docker exec -it backend bash
 
 
-CREATE USER FOR MySQL SERVER
+CREATE DATABASE MYSQL
 sudo docker exec -it backend mysql -u root -e "create database DATABASE_NAME"
 
+[AUTO] CREATE USER FOR MySQL SERVER IN /docker/build/create_mysql_user.sh
+
+[MANUAL] CREATE USER FOR MySQL SERVER
 sudo docker exec -it backend mysql -u root -e "CREATE USER 'codeurh24'@'%' IDENTIFIED BY 'password';"
-
 sudo docker exec -it backend mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'codeurh24'@'%';"
-
 sudo docker exec -it backend mysql -u root -e "SHOW GRANTS FOR codeurh24"
 
+DEAMON STARTED
 /etc/supervisor/conf.d/
