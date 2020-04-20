@@ -18,5 +18,5 @@ sudo docker exec -it backend mysql -u root -e "CREATE USER 'codeurh24'@'%' IDENT
 sudo docker exec -it backend mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'codeurh24'@'%';"
 sudo docker exec -it backend mysql -u root -e "SHOW GRANTS FOR codeurh24"
 
-DEAMON STARTED
+DEMON STARTED
 /etc/supervisor/conf.d/
