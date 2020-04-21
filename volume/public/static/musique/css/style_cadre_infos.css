@@ -1,0 +1,254 @@
+.cadreMix810 {
+    margin-left: auto;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    width: 950px;
+    height: 180px;
+    background-color: rgb(50, 50, 50);
+    background-color: rgba(250,250,250,0.1);
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 195px;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0px 0px 7px 2px #111;
+    font-size: 14px;
+}
+
+.cadreMix_info810 {
+    margin-left: 500px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    width: 440px;
+    height: 140px;
+    background-color: rgb(90, 90, 90);
+    position: absolute;
+    display: inline-block;
+    border-radius: 20px;
+    box-shadow: 0px 0px 4px 1px #000;
+    margin-top: 10px;
+	
+}
+
+
+.cadreMix_info2810 {
+    margin-left: 33px;
+    margin-top: 40px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    width: 400px;
+    height: 18px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    display: inline-block;
+    border-radius: 4px;
+    color: #000;
+    border: solid 1px #f70;
+    font-family: "digital_dreamregular";
+    overflow: hidden;
+    box-shadow: 0px 0px 4px 1px #111;
+    padding-top: 4px;
+    padding-bottom: 1px;
+    padding-left: 7px;
+    padding-right: 7px;
+	
+}
+
+
+.genre810 {
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    height: 26px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    display: inline-block;
+    border-radius: 10px;
+    min-width: 150px;
+    color: #F40;
+    border: solid 1px #f70;
+    font-family: "digital_dreamregular";
+    font-size: 10px;
+    box-shadow: 0px 0px 4px 1px #111;
+    padding-top: 4px;
+    padding-bottom: 1px;
+    padding-left: 7px;
+    padding-right: 7px;
+	font-family: 'Digital-dream';
+}
+
+a:link, a:visited {
+    /* color: #fff; */
+    text-decoration: none;
+}
+
+#liendonwload810 {
+    position: absolute;
+    margin-left: 65px;
+    margin-top: 160px;
+    color: #DDD;
+}
+
+.liendonwload2810 {
+    position: absolute;
+    margin-left: 165px;
+    margin-top: 160px;
+    color: #DDD;
+}
+a:link, a:visited {
+    /* color: #fff; */
+    text-decoration: none;
+}
+
+.imageDonwloadMIX810 {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    margin-left: 32px;
+    margin-top: 159px;
+}
+
+a img {
+    /* border: 0; */
+}
+
+.imageMix810 {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 6px;
+    border: solid 1px #f70;
+}
+
+.commentaire810 {
+    margin-left: 140px;
+    margin-top: 80px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    width: 275px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    padding-left: 5px;
+    box-shadow: 0px 0px 1px 1px #000;
+    position: absolute;
+    color: #8a1313;
+    border: solid 1px #f70;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.nomDJ810 {
+    margin-left: 140px;
+    margin-top: 46px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    width: 275px;
+    height: 21px;
+    background-color: rgb(0, 0, 0);
+    padding-top: 1px;
+    padding-left: 5px;
+    box-shadow: 0px 0px 1px 1px #000;
+    position: absolute;
+    color: #f00;
+    border: solid 1px #f70;
+    font-family: "digital_dreamregular";
+    overflow: hidden;
+}
+
+
+.Groupe810 {
+    margin-left: 140px;
+    margin-top: 12px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    width: 275px;
+    height: 21px;
+    background-color: rgb(0, 0, 0);
+    padding-top: 1px;
+    padding-left: 5px;
+    box-shadow: 0px 0px 1px 1px #000;
+    position: absolute;
+    color: #f00;
+    border: solid 1px #f70;
+    overflow: hidden;
+}
+
+
+.cadreMix_info2810 {
+    margin-left: 33px;
+    margin-top: 40px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    width: 400px;
+    height: 28px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    display: inline-block;
+    border-radius: 4px;
+    color: #FFF;
+    border: solid 1px #f70;
+    font-family: "digital_dreamregular";
+    overflow: hidden;
+    box-shadow: 0px 0px 4px 1px #111;
+    padding-top: 4px;
+    padding-bottom: 1px;
+    padding-left: 7px;
+    padding-right: 7px;
+	font-family: 'Digital-dream';
+}
+
+.lecteur {
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 77px;
+    display: inline-block;
+}
+
+
+.lnk_facebook-img {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    margin-left: 250px;
+    margin-top: 159px;
+}
+
+
+.lnk_twitter-img {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    margin-left: 300px;
+    margin-top: 159px;
+}
+
+.lnk_soundcloud-img {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    margin-left: 350px;
+    margin-top: 159px;
+}
+
+
+.lnk_mixcloud-img {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    margin-left: 400px;
+    margin-top: 159px;
+}
+
+.fb-like-mr-dnb-playeur{
+	position: absolute;
+	margin-left: 800px;
+    margin-top: 159px;
+}
+

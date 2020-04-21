@@ -1,0 +1,252 @@
+.lecteur
+	{
+		width:450px;
+		height:70px;
+		background-color: #aaa;
+		padding: 10px;
+		border-radius: 10px;
+		background-image: url('/static/image/fondPlayer.png');
+		border: outset 2px #000;
+		position: relative;
+		box-shadow: 0px 0px 7px 2px #222;
+		margin-bottom:30px;
+	}
+
+	.tempsTotal
+	{
+		display:block;
+		width:300px;
+		height:16px;
+		background-color: #111;
+		/*background-image: url('images/progresbar.gif');*/
+		border: solid 1px #000;
+		overflow:hidden;
+		margin-left:50px;
+		position: relative;
+		margin-top: 34px;
+		text-align:center;
+		color: #F70;
+		cursor : pointer;
+	}
+	
+	.tempsEnCour 
+	{
+		display:block;
+		width:0px;
+		height:16px;
+		background-color: #F70;
+		/*background-image: url('/static/musique/image/Skin2LecteurMp3.png');*/
+		position: absolute;
+		margin-top:-16px;
+		cursor : pointer;
+	}
+	
+	.play
+	{
+		width:32px;
+		height:32px;
+		/*background-color: #000;*/
+		background-image: url('/static/musique/image/Skin2LecteurMp3.png');
+		background-position: 128px 0px;
+		display: inline-block;
+		position: absolute;
+		margin-left:50px;
+	}
+	
+	.play:hover
+	{
+		width:32px;
+		height:32px;
+		/*background-color: #000;*/
+		background-image: url('/static/musique/image/Skin2LecteurMp3.png');
+		background-position: 128px 32px;
+		display: inline-block;
+		position: absolute;
+		margin-left:50px;
+		
+	}
+	
+	.stop
+	{
+		width:32px;
+		height:32px;
+		/*background-color: #000;*/
+		background-image: url('/static/musique/image/Skin2LecteurMp3.png');
+		background-position: 64px 0px;
+		display: inline-block;
+		position: absolute;
+		margin-left:82px;
+	}
+	
+	.stop:hover
+	{
+		width:32px;
+		height:32px;
+		/*background-color: #000;*/
+		background-image: url('/static/musique/image/Skin2LecteurMp3.png');
+		background-position: 64px 32px;
+		display: inline-block;
+		position: absolute;
+		margin-left:82px;
+	}
+	
+	.pause
+	{
+		width:32px;
+		height:32px;
+		/*background-color: #000;*/
+		background-image: url('/static/musique/image/Skin2LecteurMp3.png');
+		background-position: 0px 0px;
+		display: inline-block;
+		position: absolute;
+		margin-left:50px;
+	}
+	
+	.pause:hover
+	{
+		width:32px;
+		height:32px;
+		/*background-color: #000;*/
+		background-image: url('/static/musique/image/Skin2LecteurMp3.png');
+		background-position: 0px 32px;
+		display: inline-block;
+		position: absolute;
+		margin-left:50px;
+	}
+	
+
+	
+	.time
+	{
+		margin-left: 270px;
+		margin-top: 5px;
+		font-size: 20px;
+		position: absolute;
+		background-color: #111;
+		color:#F70;
+		/*padding:2px;*/
+		padding-left:5px;
+		padding-right:6px;
+		padding-top:2px;
+		padding-bottom:1px;
+		width:80px;
+		height:24px;
+		text-align:right;
+		//overflow:visible;
+	}
+	
+	.time2
+	{
+		margin-left: 180px;
+		margin-top: 5px;
+		font-size: 20px;
+		position: absolute;
+		background-color: #111;
+		color:#F70;
+		/*padding:2px;*/
+		padding-left:6px;
+		padding-right:10px;
+		padding-top:2px;
+		padding-bottom:1px;
+		overflow: visible;
+		height: 20px
+	}
+	
+	
+	.fondTime
+	{
+		position: absolute;
+		margin-left: 180px;
+		margin-top: 5px;
+		width:170px;
+		height:28px;
+		background-color: #111;
+	}
+	
+	
+	.speed_plus
+	{
+		margin-left: 360px;
+		position: absolute;
+		color:#F70;
+		text-decoration:none;
+	}
+	
+	.speed_moins
+	{
+		position: absolute;
+		margin-left: 360px;
+		margin-top: 30px;
+		color:#F70;
+		text-decoration:none; 
+	}
+	
+	.sonAudio
+	{
+		width:32px;
+		height:32px;
+		position: absolute;
+		background-image: url('/static/musique/image/Skin2LecteurMp3.png');
+		background-position: 96px 0px;
+		margin-left: 124px;
+	}
+	
+	.sonAudio:hover
+	{
+		width:32px;
+		height:32px;
+		position: absolute;
+		background-image: url('/static/musique/image/Skin2LecteurMp3.png');
+		background-position: 96px 32px;
+		margin-left: 124px;
+	}
+	
+	.controleVolume
+	{
+		width:15px;
+		height:52px;
+		position: absolute;
+		margin-left: 15px;
+		background-color: #A40;
+		cursor : pointer;
+		/*background-image: url('/static/musique/image/Skin2LecteurMp3.png');*/
+		background-image: url('/static/musique/image/fondVolume.png');
+		
+		background-position: -1px -54px;
+		background-size: 16px 54px;
+	}
+	
+	.controleVolume_statut
+	{
+	
+		width:15px;
+		height:1px;
+		background-color: #111;
+		cursor : pointer;
+	}
+	
+	.titreMusical
+	{
+		color:#F70;
+		font-size: 15px;
+		cursor : pointer;
+		height: 17px;
+		
+	}
+	
+	.titreMusical2
+	{
+		color:#000;
+		font-size: 15px;
+		cursor : pointer;
+		height: 17px;
+		margin-top: 0px;
+		overflow:hidden;
+		width:300px;
+	}
+
+	.souris
+	{
+		position: relative;
+	}
+			
