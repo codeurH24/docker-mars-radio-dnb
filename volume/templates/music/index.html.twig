@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/static/css/player.css">
+{% endblock %}
+
+{% block body %}
+    <h1>Musiques</h1>
+
+
+    <div class="cadreMix810">
+	
+        <audio style="position:relative;z-index:1;width:0px;overflow:visible;" preload="none">
+            <source src="http://lionzone.fr/data/media/sons/DJ BadWeed Lion L - Neuro ina Jungle Vol 1 05-09-2019.mp3" type="audio/mpeg">
+        </audio>		
+        <div class="lecteur">
+            <a href="#" class="sonAudio"></a>
+            <a href="#" class="pause"></a>
+            <a href="#" class="play"></a>
+            <a href="#" class="stop"></a> 
+            <a href="#" class="speed_plus">Rapide</a> 
+            <a href="#" class="speed_moins">Lent</a> 
+            <div class="fondTime">
+            </div>
+            <div class="time">
+            </div>
+            <div class="time2">
+            </div>
+            <div class="controleVolume">
+                <div class="controleVolume_statut">
+                </div>
+            </div>
+            
+            <div class="tempsTotal">
+                <div class="titreMusical"></div>
+                <div style="overflow:hidden;" class="tempsEnCour">
+                    <div class="titreMusical2"></div>
+                </div>
+            </div> 
+        </div>
+        
+        
+        <div class="cadreMix_info810">
+            <img class="imageMix810" alt="image de mix" src="http://lionzone.fr/data/media/images/dj-pictogram-1441037.jpg">
+            <div class="commentaire810">https://serato.com/playlists/Lion_L_Mars_Radio_DNB/neuro-ina-jungle-vol-1-05-09-2019		</div>
+            <div class="nomDJ810">Lion L BadWeed		</div>
+            <div class="Groupe810">Mars Radio DNB		</div>
+        </div>
+        <div class="cadreMix_info2810"> Neuro ina Jungle Vol 1 05-09-2019	</div>
+        <div class="genre810">Jungle; Techstep; Neurofunk; Ragga/Jungle	</div>
+        <a class="lienImageDonwloadMIX810" href="http://lionzone.fr/data/media/sons/DJ BadWeed Lion L - Neuro ina Jungle Vol 1 05-09-2019.mp3" target="_self">
+            <img class="imageDonwloadMIX810" alt="" src="http://www.mars-radio-dnb.com/data/site/contenus/musiques/images/mars-radio-dnb-download.png">
+        </a>
+        <a id="liendonwload810" href="data/site/contenus/musiques/telechargerMP3.php?fichiermp3=
+        REogQmFkV2VlZCBMaW9uIEwgLSBOZXVybyBpbmEgSnVuZ2xlIFZvbCAxIDA1LTA5LTIwMTkubXAz" target="_blank">Télécharger
+        </a>
+        <a class="liendonwload2810" href="http://lionzone.fr/data/media/sons/DJ BadWeed Lion L - Neuro ina Jungle Vol 1 05-09-2019.mp3" target="">Direct MP3
+        </a>
+        
+        <a class="lnk_facebook-a" href=" Neuro ina Jungle Vol 1 05-09-2019" target="_self">
+            <img class="lnk_facebook-img" alt="" src="http://www.mars-radio-dnb.com/data/site/contenus/musiques/images/facebook-32.png">
+        </a>
+        
+        <a class="lnk_twitter-a" href="" target="_self">
+            <img class="lnk_twitter-img" alt="" src="http://www.mars-radio-dnb.com/data/site/contenus/musiques/images/twitter-32.png">
+        </a>
+        
+        <a class="lnk_soundcloud-a" href="https://soundcloud.com/beat-nation-li6/" target="_self">
+            <img class="lnk_soundcloud-img" alt="" src="http://www.mars-radio-dnb.com/data/site/contenus/musiques/images/soundcloud-32-1.png">
+        </a>
+        
+        <a class="lnk_mixcloud-a" href="https://www.mixcloud.com/Lionhell/" target="_self">
+            <img class="lnk_mixcloud-img" alt="" src="http://www.mars-radio-dnb.com/data/site/contenus/musiques/images/mixcloud-32.png">
+        </a>
+        
+        <div class="fb-like fb-like-mr-dnb-playeur fb_iframe_widget" data-href="http://www.mars-radio-dnb.com/music/-Neuro-ina-Jungle-Vol-1-05_09_2019.php" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=294856497549799&amp;container_width=0&amp;href=http%3A%2F%2Fwww.mars-radio-dnb.com%2Fmusic%2F-Neuro-ina-Jungle-Vol-1-05_09_2019.php&amp;layout=button_count&amp;locale=fr_FR&amp;sdk=joey&amp;share=true&amp;show_faces=false&amp;size=small"><span style="vertical-align: bottom; width: 148px; height: 20px;"><iframe name="f1169047b90c14" width="1000px" height="1000px" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.7/plugins/like.php?action=like&amp;app_id=294856497549799&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D46%23cb%3Df1b9064cc4a4ecc%26domain%3Dwww.mars-radio-dnb.com%26origin%3Dhttp%253A%252F%252Fwww.mars-radio-dnb.com%252Ff1d2bbb3f3b0788%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2Fwww.mars-radio-dnb.com%2Fmusic%2F-Neuro-ina-Jungle-Vol-1-05_09_2019.php&amp;layout=button_count&amp;locale=fr_FR&amp;sdk=joey&amp;share=true&amp;show_faces=false&amp;size=small" style="border: none; visibility: visible; width: 148px; height: 20px;" class=""></iframe></span></div>
+        
+    </div>
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+{% endblock %}
