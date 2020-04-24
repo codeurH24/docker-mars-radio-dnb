@@ -5,12 +5,12 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * LesMix0
+ * Audiofile
  *
  * @ORM\Table(name="AudioFile")
  * @ORM\Entity
  */
-class AudioFile
+class Audiofile
 {
     /**
      * @var int
@@ -24,28 +24,28 @@ class AudioFile
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=50, nullable=false)
+     * @ORM\Column(name="pseudo", type="string", length=50, nullable=false)
      */
     private $pseudo;
 
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=50, nullable=false)
+     * @ORM\Column(name="dj", type="string", length=50, nullable=false)
      */
     private $dj;
 
     /**
      * @var string
      *
-     * @ORM\Column( type="string", length=50, nullable=false)
+     * @ORM\Column(name="`group`", type="string", length=50, nullable=false)
      */
     private $group;
 
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=50, nullable=false)
+     * @ORM\Column(name="title", type="string", length=50, nullable=false)
      */
     private $title;
 
@@ -59,14 +59,14 @@ class AudioFile
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=150, nullable=false)
+     * @ORM\Column(name="picture", type="string", length=150, nullable=false)
      */
     private $picture;
 
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=255, nullable=false)
+     * @ORM\Column(name="description", type="string", length=255, nullable=false)
      */
     private $description;
 
@@ -76,18 +76,39 @@ class AudioFile
      * @ORM\Column(name="genre", type="string", length=50, nullable=false)
      */
     private $genre;
-    
 
     /**
-     * @var string
+     * @var int|null
      *
-     * @ORM\Column(type="string", length=255, nullable=false)
+     * @ORM\Column(name="filesize", type="integer", nullable=true)
      */
-    private $file;
+    private $filesize;
+
+    /**
+     * @var bool|null
+     *
+     * @ORM\Column(name="publish", type="boolean", nullable=true)
+     */
+    private $publish = '0';
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $oldFilename;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $fileCreatedAt;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $old_picture_name;
 
     public function getId(): ?int
     {
-        return $this->id;
+        return (int) $this->id;
     }
 
     public function getPseudo(): ?string
@@ -186,14 +207,62 @@ class AudioFile
         return $this;
     }
 
-    public function getFile(): ?string
+    public function getFilesize(): ?int
     {
-        return $this->file;
+        return $this->filesize;
     }
 
-    public function setFile(string $file): self
+    public function setFilesize(?int $filesize): self
     {
-        $this->file = $file;
+        $this->filesize = $filesize;
+
+        return $this;
+    }
+
+    public function getPublish(): ?bool
+    {
+        return $this->publish;
+    }
+
+    public function setPublish(?bool $publish): self
+    {
+        $this->publish = $publish;
+
+        return $this;
+    }
+
+    public function getOldFilename(): ?string
+    {
+        return $this->oldFilename;
+    }
+
+    public function setOldFilename(string $oldFilename): self
+    {
+        $this->oldFilename = $oldFilename;
+
+        return $this;
+    }
+
+    public function getFileCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->fileCreatedAt;
+    }
+
+    public function setFileCreatedAt(?\DateTimeInterface $fileCreatedAt): self
+    {
+        $this->fileCreatedAt = $fileCreatedAt;
+
+        return $this;
+    }
+
+    public function getOldPictureName(): ?string
+    {
+        return $this->old_picture_name;
+    }
+
+    public function setOldPictureName(?string $old_picture_name): self
+    {
+        $this->old_picture_name = $old_picture_name;
 
         return $this;
     }

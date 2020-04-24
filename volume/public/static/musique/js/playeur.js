@@ -7,20 +7,23 @@
 // au moins une fois
 $('.play').on('mouseenter',function(e){ 
 	e.preventDefault(); 
-	var linkList = $("body").find(".lecteur"); // liste les elements
-	var index = linkList.index($(this).parent()); // retourne l'index de ce element parmis la liste
-	activePlayer('.lecteur:eq('+ index +')', index );
+	// var linkList = $("body").find(".lecteur"); // liste les elements
+	// var index = linkList.index($(this).parent()); // retourne l'index de ce element parmis la liste
+	// activePlayer('.lecteur:eq('+ index +')', index );
+	// activePlayer2($(this));
 	
-	setInterval(function(e){
-		rafraichirPlayer('.lecteur:eq('+ index +')', index ); // gere et affiche les infos du lecteur
-	}, 40 );	
+	(new player).initEvent();
+	
+	// setInterval(function(e){
+	// 	rafraichirPlayer('.lecteur:eq('+ index +')', index ); // gere et affiche les infos du lecteur
+	// }, 40 );	
 	
 	// activePlayer pourrait est inclus dans la fonction initMetaDataPlayeur
 	//  a la place de creer cette fonction mouseenter
 });
 
 
-// met a jour les informations des playeur dès le chargement de la page
+// met a jour les informations des playeur dï¿½s le chargement de la page
 // active pour chaque lecteur l'affichage en temps reel grace a setInterval de la fonction rafraichirPlayer
 // setInterval de la fonction initMetaDataPlayeur sert quand a elle a attendre le preload reel de chaque audio.
 var initMetaDataPlayeur = function(){

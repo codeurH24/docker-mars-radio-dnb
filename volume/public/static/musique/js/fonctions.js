@@ -1,4 +1,152 @@
+var activePlayer2 = function(audioElm)
+{
+	// console.log(audioElm);
 
+	var elmFound = audioElm
+	for (let index = 0; index < 10; index++) {
+		elmFound = elmFound.parent()
+		var elmTmp = elmFound.find('audio');
+		if (elmTmp.length) {
+			elmFound = elmTmp[0];
+			console.log('trouvé', elmFound)
+			break;
+		} else {
+			console.log('cherche', elmFound.find('audio'))
+		}
+	}
+
+
+}
+
+class player {
+	contructor() {
+		this.audio = null;
+		this.SourisEnfoncer= false;
+	}
+
+	initEvent(){
+		let that = this;
+		$('.play').on('click',function(e){ 
+			e.preventDefault(); 
+			let audio = that.findAudioTag($(this));
+			audio.play(); 
+		});
+		$('.pause').on('click',function(e){ 
+			e.preventDefault(); 
+			let audio = that.findAudioTag($(this));
+			audio.pause(); 
+		});
+		$('.stop').on('click',function(e){
+			e.preventDefault(); 
+			let audio = that.findAudioTag($(this));
+			audio.pause(); 
+			audio.currentTime=0;
+		});
+		$('.speed_plus').on('click',function(e){
+			e.preventDefault(); 
+			let audio = that.findAudioTag($(this));
+			audio.playbackRate += 0.1; 
+		});
+		$('.speed_moins').on('click',function(e){
+			e.preventDefault();
+			let audio = that.findAudioTag($(this));
+			audio.playbackRate -= 0.1; 
+		});
+		//CONTROLE DU VOLUME
+		$('.controleVolume').mousedown(function(e){
+			e.preventDefault(); 
+			that.SourisEnfoncer = true;
+			if (that.audio === null) {
+				that.audio = that.findAudioTag($(this));
+			}
+		});
+
+		$('.controleVolume').mouseleave(function(e){
+			e.preventDefault(); 
+			that.SourisEnfoncer = false;
+			that.audio = null;
+			console.log('mouseleave')
+		});
+		
+		$('.controleVolume').mouseup(function(e){
+			e.preventDefault(); 
+			that.SourisEnfoncer = false;
+			that.audio = null;
+			console.log('mouseup')
+		});
+
+
+		
+		$('.controleVolume').mousemove(function(e){
+			e.preventDefault(); 
+			if(that.SourisEnfoncer && that.audio !== null && that.audio !== undefined)
+			{
+			
+			  var parentOffset = $(this).parent().offset(); 
+			   //or $(this).offset(); if you really just want the current element's offset
+			   var relX = e.pageX - parentOffset.left;
+			   var relY = e.pageY - parentOffset.top;
+			   relY = relY - 12;
+			   relY = 51-relY
+					
+			
+			
+				var tailleBar = $(this).height();
+				var pos = that.offset(this,e);
+				var positionSourisY = -210-(pos.y); /* -(tailleBar-6) */
+				positionSourisY = positionSourisY % 50;
+				//alert(positionSourisY+'-'+$(this).attr('id'));
+				
+				var coef = relY / tailleBar ;
+				//coef = 2-coef;
+				//alert(   coef           );
+				console.log(coef);
+				that.audio.volume =  coef; 
+
+				$('.controleVolume_statut').height( ( 50 - (coef* 50) ) );
+				var volR = parseInt( 255 * coef );
+				var volV = parseInt( 127 * coef );
+				$(this).css('background-color',  'RGB('+volR+','+volV+',0)');
+			}
+			
+		});
+		
+
+	}
+
+	offset(el,event){
+		var ox = -el.offsetLeft,
+			oy = -el.offsetTop;
+		while(el=el.offsetParent){
+			ox += el.scrollLeft - el.offsetLeft;
+			oy += el.scrollTop - el.offsetTop;
+		}
+		return {x:event.clientX + ox,y:event.clientY + oy};
+	};
+
+	/**
+	 * 
+	 * @param {*} audioElm Element enfant jquery du container parent de la balise audio
+	 */
+	findAudioTag(audioElm) {
+		var elmFound = audioElm
+		for (let index = 0; index < 10; index++) {
+			// incrémente de parent en parent à chaque boucles
+			elmFound = elmFound.parent();
+			// mémorise le resultat de find pour optimiser les performances
+			var elmTmp = elmFound.find('audio');
+			// si un element à été trouvé alors
+			// le premier element trouvé est forcément la tag recherché.
+			if (elmTmp.length) {
+				elmFound = elmTmp[0];
+				break;
+			}
+		}
+		console.log('elmFound', elmFound);
+		return elmFound;
+	}
+
+}
 
 
 
@@ -8,7 +156,7 @@
 			//var audio = document.getElementById(source);
 			var audios = document.getElementsByTagName('audio');
 			var audio = audios[index];
-			 
+			console.log('audio',audio);
 			
 				 $(identifiant+' .play').on('click',function(e){ 
 				  e.preventDefault(); 
@@ -133,7 +281,7 @@
 							$(this).css('background-color',  'RGB('+volR+','+volV+',0)');
 						}
 						
-				   });
+					});
 				   
 				 
 				 
