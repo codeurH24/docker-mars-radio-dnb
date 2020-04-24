@@ -2,7 +2,8 @@
 
 namespace App\Repository;
 
-use App\Entity\AudiFile;
+
+use App\Entity\Audiofile;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -16,7 +17,7 @@ class AudiFileRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, AudiFile::class);
+        parent::__construct($registry, Audiofile::class);
     }
 
     // /**
