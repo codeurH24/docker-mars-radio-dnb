@@ -1,3 +1,5 @@
 db/mysql/*
 !db/mysql/.gitkeep
 *.mp3
+volume/public/static/image/mix/*
+!volume/public/static/image/mix/.gitkeep
