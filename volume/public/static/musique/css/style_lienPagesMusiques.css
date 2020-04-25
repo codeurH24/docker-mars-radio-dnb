@@ -1,14 +1,18 @@
-.lienPage{
+.lienPage, .pagination span{
 	display: inline-block;
 	width: 50px;
 	height: 50px;
 	border-radius: 100px;
 	text-align:center;
 	background-color: rgba(0, 0, 0, 0.42);
-	padding: 10px;
-	
+	padding: 7px;
 }
-.menuLiensPages{
+
+.lienPage, .pagination span.current{
+	background-color: rgba(0, 0, 0, 1);
+}
+
+.menuLiensPages, .pagination{
 	display: block;
 	width: 100%;
 	height: 30px;
@@ -18,7 +22,14 @@
 	height: 50px;
 }
 
-.menuLiensPages a{
+.menuLiensPages a, 
+.pagination .page a,
+.pagination .current,
+.pagination .first a, 
+.pagination .last a,
+.pagination .next a,
+.pagination .previous a
+{
 	color: red;
 	font-size: 25px;
 	margin: -5px 0px 0px 0px;

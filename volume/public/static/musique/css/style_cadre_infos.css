@@ -201,7 +201,14 @@ a img {
     padding-bottom: 1px;
     padding-left: 7px;
     padding-right: 7px;
-	font-family: 'Digital-dream';
+    font-family: 'Digital-dream';
+    overflow: hidden;
+}
+
+.cadreMix_info2810 span{
+    width: 600px;
+    height: 28px;
+    display: inline-block;
 }
 
 .lecteur {

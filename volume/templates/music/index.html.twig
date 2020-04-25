@@ -5,11 +5,45 @@
     <link rel="stylesheet" href="/static/musique/css/style_playeur.css"> 
     <link rel="stylesheet" href="/static/musique/css/style_lienPagesMusiques.css">
     <link rel="stylesheet" href="/static/musique/css/style_cadre_infos.css">
-    {% endblock %}
+    <style>
+        .rechercheMusique{
+            width:100%;
+            height: 40px;
+            background-color: rgba(0,0,0,0.3);
+            margin-top: -15px;
+            text-align:center;
+        }
+        
+        .rechercheMusique input[type=submit]{
+            background-color: black;
+            height: 28px;
+            color: #FFF;
+        }
+        .rechercheMusique input[type=text]{
+            background-color: #000;
+            color: #F40;
+            font-family: 'Digital-dream';
+            font-size: 16px;
+            width: 800px;
+            min-width: 200px;
+        }
+    </style>
+{% endblock %}
 
 {% block body %}
-    <h1>Musiques</h1>
-    
+
+    {% if search_query is defined %}
+        <form method="get" action="{{ path('music_search', [], true) }}" class="rechercheMusique">
+            <input type="text" name="q" value="{{ search_query }}" /> <input type="submit" value="Rechercher" />
+        </form>
+    {% else %}
+        <form method="get" action="{{ path('music_search', [], true) }}" class="rechercheMusique">
+            <input type="text" name="q" /> <input type="submit" value="Rechercher" />
+        </form>
+    {% endif %}
+
+
+    {{ knp_pagination_render(audioFiles) }}
     
     {% for row in audioFiles %}
     <div class="cadreMix810 musicItem">
@@ -44,12 +78,12 @@
         
         
         <div class="cadreMix_info810">
-            <img class="imageMix810" alt="image de mix" src="http://lionzone.fr/data/media/images/{{row.oldPictureName}}">
+            <img class="imageMix810" alt="image de mix" src="http://v3.mars-radio-dnb.com/static/image/mix/{{row.picture}}">
             <div class="commentaire810">{{row.description|striptags('<br><p>')|raw}}</div>
             <div class="nomDJ810">{{row.dj}}</div>
             <div class="Groupe810">{{row.group}}</div>
         </div>
-        <div class="cadreMix_info2810">{{row.title}}</div>
+        <div class="cadreMix_info2810" title="{{row.title}}"><span>{{row.title}}</span></div>
         <div class="genre810">{{row.genre}}</div>
         <a class="lienImageDonwloadMIX810" href="#" target="_self">
             <img class="imageDonwloadMIX810" alt="" src="http://www.mars-radio-dnb.com/data/site/contenus/musiques/images/mars-radio-dnb-download.png">
@@ -90,11 +124,16 @@
             </span>
         </div> #}
         
-        <div    class="fb-like fb-like-mr-dnb-playeur" data-href="{{ 'http://www.mars-radio-dnb.com/music/' ~ title_fb_like[loop.index]  ~ '.php'}}" 
-                data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true">
+        
+        <div    class="fb-like fb-like-mr-dnb-playeur" 
+                data-href="{{ 'http://www.mars-radio-dnb.com/music/' ~ title_fb_like[loop.index]  ~ '.php'}}" 
+                data-layout="button_count" 
+                data-action="like" data-size="small" data-show-faces="false" data-share="true">
         </div>
     </div>
     {% endfor %}
+
+    {{ knp_pagination_render(audioFiles) }}
 
 {% endblock %}
 
