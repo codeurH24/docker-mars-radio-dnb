@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Audiofile{% endblock %}
+
+{% block body %}
+    <h1>Audiofile</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ audiofile.id }}</td>
+            </tr>
+            <tr>
+                <th>Pseudo</th>
+                <td>{{ audiofile.pseudo }}</td>
+            </tr>
+            <tr>
+                <th>Dj</th>
+                <td>{{ audiofile.dj }}</td>
+            </tr>
+            <tr>
+                <th>Group</th>
+                <td>{{ audiofile.group }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ audiofile.title }}</td>
+            </tr>
+            <tr>
+                <th>Filename</th>
+                <td>{{ audiofile.filename }}</td>
+            </tr>
+            <tr>
+                <th>Picture</th>
+                <td>{{ audiofile.picture }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ audiofile.description }}</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ audiofile.genre }}</td>
+            </tr>
+            <tr>
+                <th>Filesize</th>
+                <td>{{ audiofile.filesize }}</td>
+            </tr>
+            <tr>
+                <th>Publish</th>
+                <td>{{ audiofile.publish ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>OldFilename</th>
+                <td>{{ audiofile.oldFilename }}</td>
+            </tr>
+            <tr>
+                <th>FileCreatedAt</th>
+                <td>{{ audiofile.fileCreatedAt ? audiofile.fileCreatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Old_picture_name</th>
+                <td>{{ audiofile.oldPictureName }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('audiofile_index') }}">back to list</a>
+
+    <a href="{{ path('audiofile_edit', {'id': audiofile.id}) }}">edit</a>
+
+    {{ include('audiofile/_delete_form.html.twig') }}
+{% endblock %}

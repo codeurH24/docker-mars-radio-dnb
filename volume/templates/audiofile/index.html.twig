@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Audiofile index{% endblock %}
+
+{% block body %}
+    <h1>Audiofile index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pseudo</th>
+                <th>Dj</th>
+                <th>Group</th>
+                <th>Title</th>
+                <th>Filename</th>
+                <th>Picture</th>
+                <th>Description</th>
+                <th>Genre</th>
+                <th>Filesize</th>
+                <th>Publish</th>
+                <th>OldFilename</th>
+                <th>FileCreatedAt</th>
+                <th>Old_picture_name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for audiofile in audiofiles %}
+            <tr>
+                <td>{{ audiofile.id }}</td>
+                <td>{{ audiofile.pseudo }}</td>
+                <td>{{ audiofile.dj }}</td>
+                <td>{{ audiofile.group }}</td>
+                <td>{{ audiofile.title }}</td>
+                <td>{{ audiofile.filename }}</td>
+                <td>{{ audiofile.picture }}</td>
+                <td>{{ audiofile.description }}</td>
+                <td>{{ audiofile.genre }}</td>
+                <td>{{ audiofile.filesize }}</td>
+                <td>{{ audiofile.publish ? 'Yes' : 'No' }}</td>
+                <td>{{ audiofile.oldFilename }}</td>
+                <td>{{ audiofile.fileCreatedAt ? audiofile.fileCreatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ audiofile.oldPictureName }}</td>
+                <td>
+                    <a href="{{ path('audiofile_show', {'id': audiofile.id}) }}">show</a>
+                    <a href="{{ path('audiofile_edit', {'id': audiofile.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="15">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('audiofile_new') }}">Create new</a>
+{% endblock %}

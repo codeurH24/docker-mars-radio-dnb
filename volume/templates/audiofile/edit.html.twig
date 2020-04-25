@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Audiofile{% endblock %}
+
+{% block body %}
+    <h1>Edit Audiofile</h1>
+
+    {{ include('audiofile/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('audiofile_index') }}">back to list</a>
+
+    {{ include('audiofile/_delete_form.html.twig') }}
+{% endblock %}
