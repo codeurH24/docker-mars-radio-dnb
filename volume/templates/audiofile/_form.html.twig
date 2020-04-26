@@ -1,4 +1,18 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    
+    <div class="row">
+        <div class="col">
+            <div class="">
+
+                <a href="{{ path('audiofile_index') }}" class="btn btn-mr-primary mx-3">Retour</a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="text-right">
+
+                <button class="btn btn-mr-primary ml-auto">{{ button_label|default('Save') }}</button>
+            </div>
+        </div>
+    </div>
 {{ form_end(form) }}

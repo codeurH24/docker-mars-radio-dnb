@@ -57,6 +57,12 @@ header {
 nav {
     background: linear-gradient(to bottom, #762500 0%,#140200 0%,#920000 100%);
 }
+
+thead {
+    background: linear-gradient(to bottom,#140200 0%,#920000 100%);
+    color: rgb(194, 194, 194);
+}
+
 .navbar {
     position: relative;
     min-height: 50px;

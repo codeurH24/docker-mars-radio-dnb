@@ -1,59 +1,113 @@
-{% extends 'base.html.twig' %}
+{% extends '/admin/base.html.twig' %}
 
 {% block title %}Audiofile index{% endblock %}
 
 {% block body %}
-    <h1>Audiofile index</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>Liste des mixs</h1>
+            <a href="{{ path('audiofile_new') }}" class="btn btn-mr-primary m-2">Nouveau mix</a>
+            <div class="my-2">
+                <div class="row">
+                    <div class="col-2">
+                        <input class="form-control" type="text" id="myInput" onkeyup="searchInsideTable()" placeholder="Recherche un mix">
+                    </div>
+                    <div class="col-1">
+                        <select class="form-control" name="" id="columnSelected"></select>
+                    </div>
+                </div>
+            </div>
+            <table class="table" id="myTable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        {# <th>Pseudo</th> #}
+                        <th>Dj</th>
+                        <th>Group</th>
+                        <th>Title</th>
+                        <th>Filename</th>
+                        {# <th>Picture</th> #}
+                        {# <th>Description</th> #}
+                        <th>Genre</th>
+                        <th>Filesize</th>
+                        <th>Publish</th>
+                        {# <th>OldFilename</th> #}
+                        <th>FileCreatedAt</th>
+                        {# <th>Old_picture_name</th> #}
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for audiofile in audiofiles %}
+                    <tr>
+                        <td>{{ audiofile.id }}</td>
+                        {# <td>{{ audiofile.pseudo }}</td> #}
+                        <td>{{ audiofile.dj }}</td>
+                        <td>{{ audiofile.group }}</td>
+                        <td>{{ audiofile.title }}</td>
+                        <td>{{ audiofile.filename }}</td>
+                        {# <td>{{ audiofile.picture }}</td> #}
+                        {# <td>{{ audiofile.description }}</td> #}
+                        <td>{{ audiofile.genre }}</td>
+                        <td>{{ (audiofile.filesize / 1000000) |number_format }}Mo</td>
+                        <td>{{ audiofile.publish ? 'Yes' : 'No' }}</td>
+                        {# <td>{{ audiofile.oldFilename }}</td> #}
+                        <td>{{ audiofile.fileCreatedAt ? audiofile.fileCreatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                        {# <td>{{ audiofile.oldPictureName }}</td> #}
+                        <td>
+                            <a href="{{ path('audiofile_show', {'id': audiofile.id}) }}">show</a>
+                            <a href="{{ path('audiofile_edit', {'id': audiofile.id}) }}">edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="15">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        
+            <a href="{{ path('audiofile_new') }}">Create new</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Pseudo</th>
-                <th>Dj</th>
-                <th>Group</th>
-                <th>Title</th>
-                <th>Filename</th>
-                <th>Picture</th>
-                <th>Description</th>
-                <th>Genre</th>
-                <th>Filesize</th>
-                <th>Publish</th>
-                <th>OldFilename</th>
-                <th>FileCreatedAt</th>
-                <th>Old_picture_name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for audiofile in audiofiles %}
-            <tr>
-                <td>{{ audiofile.id }}</td>
-                <td>{{ audiofile.pseudo }}</td>
-                <td>{{ audiofile.dj }}</td>
-                <td>{{ audiofile.group }}</td>
-                <td>{{ audiofile.title }}</td>
-                <td>{{ audiofile.filename }}</td>
-                <td>{{ audiofile.picture }}</td>
-                <td>{{ audiofile.description }}</td>
-                <td>{{ audiofile.genre }}</td>
-                <td>{{ audiofile.filesize }}</td>
-                <td>{{ audiofile.publish ? 'Yes' : 'No' }}</td>
-                <td>{{ audiofile.oldFilename }}</td>
-                <td>{{ audiofile.fileCreatedAt ? audiofile.fileCreatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ audiofile.oldPictureName }}</td>
-                <td>
-                    <a href="{{ path('audiofile_show', {'id': audiofile.id}) }}">show</a>
-                    <a href="{{ path('audiofile_edit', {'id': audiofile.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="15">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+{% block javascripts %}
 
-    <a href="{{ path('audiofile_new') }}">Create new</a>
+<script>
+    function searchInsideTable() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue, column;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        column = $( "#columnSelected" ).val();
+      
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[column];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+    
+      function columnSelected() {
+          $( "table thead th" ).each(function( index ) {
+              //console.log( index + ": " + $( this ).text() );
+              $( "#columnSelected" ).append( '<option value="'+index+'">'+$( this ).text()+'</option>' );
+          });
+      }
+      columnSelected();
+
+</script>
+
 {% endblock %}

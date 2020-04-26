@@ -5,6 +5,7 @@
         <title>{% block title %}Mars Radio DNB{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="/static/css/site.css">
+        <link rel="stylesheet" href="/static/css/global.css">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
@@ -39,7 +40,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ path('music') }}">MUSIQUES</a>
                 </li>
-                <li class="nav-item active">
+                {# <li class="nav-item active">
                     <a class="nav-link" href="#">RADIO</a>
                 </li>
                 <li class="nav-item active">
@@ -50,7 +51,16 @@
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">FAIRE UN DON</a>
+                </li> #}
+                {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('admin') }}">ADMIN</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('app_logout') }}">DECONNEXION</a>
+                </li>        
+                {% endif %}
+
               </ul>
               <span class="navbar-text">
               </span>

@@ -1,13 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Audiofile{% endblock %}
+{% block title %}Modification - mix{% endblock %}
+
+{% block stylesheets %}
+<style>
+    #audiofile_genre .form-check {
+        display: inline-block;
+        margin-left: 25px;
+    }
+</style>
+{% endblock %}
+
 
 {% block body %}
-    <h1>Edit Audiofile</h1>
 
-    {{ include('audiofile/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('audiofile_index') }}">back to list</a>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-5">
+                <h1>Modification - mix</h1>
 
-    {{ include('audiofile/_delete_form.html.twig') }}
+                <a href="{{ path('audiofile_index') }}" class="btn btn-mr-primary m-3">Retour</a>
+                {{ include('audiofile/_delete_form.html.twig') }}  
+            
+                {{ include('audiofile/_form.html.twig', {'button_label': 'Update'}) }}
+                          
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+    <script>
+        console.log($('#audiofile_picture').val().length)
+        $('#audiofile_picture').change(function(){
+            console.log($(this).val());
+        });
+    </script>
 {% endblock %}

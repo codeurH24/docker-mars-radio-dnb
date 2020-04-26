@@ -1,11 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Audiofile{% endblock %}
+{% block title %}Création - Nouveau mix{% endblock %}
+
+
+{% block stylesheets %}
+<style>
+    #audiofile_genre .form-check {
+        display: inline-block;
+        margin-left: 25px;
+    }
+</style>
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Audiofile</h1>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-5">
+            <h1>Création - Nouveau mix</h1>
 
-    {{ include('audiofile/_form.html.twig') }}
-
-    <a href="{{ path('audiofile_index') }}">back to list</a>
+            <a href="{{ path('audiofile_index') }}" class="btn btn-mr-primary m-3">Retour</a>
+        
+            {{ include('audiofile/_form.html.twig') }}
+        
+            
+        </div>
+    </div>
+</div>
 {% endblock %}
