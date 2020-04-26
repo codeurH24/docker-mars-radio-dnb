@@ -1,0 +1,65 @@
+.btn-mr-primary {
+    /* color: #ffcf00;
+    background-color: #ba5600;
+    border-color: #b27676;
+    transition: all .5s;
+    min-width: 100px;
+    text-transform: capitalize; */
+
+    color: #c0c0c0;
+    background-color: #1c1c1c;
+    border-color: #5c0909;
+    transition: all .5s;
+    min-width: 100px;
+    text-transform: capitalize;
+
+}
+.btn-mr-primary:hover {
+    /* border-color: white;
+    color: #ffcf00;
+    min-width: 100px;
+    text-transform: capitalize; */
+
+    border-color: white;
+    color: #ffcf00;
+    min-width: 100px;
+    border-color: #ff0000;
+    text-transform: capitalize;
+}
+
+.btn-mr-danger {
+    color: #aeff04;
+    color: #d3d3d3;
+    background-color: #ba0000;
+    border-color: #b27676;
+    transition: all .5s;
+    min-width: 100px;
+    text-transform: capitalize;
+}
+.btn-mr-danger:hover {
+    border-color: white;
+    color: #d3d3d3;
+    min-width: 100px;
+    text-transform: capitalize;
+}
+
+
+form, table {
+    background-color: rgba(255, 255, 255, 0.746);
+    background-color: rgba(250,250,250,0.48);
+    color: black;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0px 0px 7px 2px #111;
+}
+form, table a{
+    color: #621000;
+}
+
+form, table a:hover{
+    color: #ff7b00;
+}
+
+form, table {
+    color: #000000;
+}
